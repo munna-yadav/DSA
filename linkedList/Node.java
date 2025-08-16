@@ -23,7 +23,14 @@ class Node {
     public static void main(String[] args)
     {
         int[] arr = { 1, 3, 4, 4, 5 };
+
         Node head = CreateList(arr);
-        System.out.println(head.data);
+
+        Node temp = head;
+        int count = 0;
+        while (temp != null) {
+            System.out.print(temp.data + ",");
+            temp = temp.next;
+        }
     }
 }

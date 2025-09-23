@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class containsDuplicateII {
 
 
@@ -16,10 +19,25 @@ public class containsDuplicateII {
         return false;
     }
 
+    static boolean optimalSolution(int []arr, int k){
+    Map<Integer,Integer> map = new HashMap<>();
+
+    for(int i = 0; i < arr.length; i++){
+        if(map.containsKey(arr[i])){
+            int prevIndex = map.get(arr[i]);
+            if(i - prevIndex <= k){   
+                return true;
+            }
+        }
+        map.put(arr[i], i); 
+    }
+    return false;
+}
+
     public static void main(String[] args) {
-        int []arr = {1,2,3,1,2,3};
-        int k = 2;
-        boolean solution = solution(arr, k);
-        System.out.println(solution);
+        int []arr = {1,0,1,1};
+        int k = 1;
+        boolean result = optimalSolution(arr, k);
+        System.out.println(result);
     }
 }

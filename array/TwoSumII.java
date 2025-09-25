@@ -24,11 +24,29 @@ public class TwoSumII {
         }
         return result;
     }
+
+    // two pointers approach
+    static int [] optimalSolution(int []nums, int target){
+        int left = 0;
+        int right = nums.length-1;
+
+        while (right > left) {
+            int sum = nums[left] + nums[right];
+
+            if (sum == target)break;
+
+            else if (sum < target) left++;
+            else if (sum > target) right--;
+            
+        }
+        int [] result = {left+1, right+1};
+        return result;
+    }
     public static void main(String[] args) {
         int []nums = {2,7,11,15};
         int target = 9;
 
-        int []result = solution(nums, target);
+        int []result = optimalSolution(nums, target);
         System.out.println(Arrays.toString(result));
 
     }

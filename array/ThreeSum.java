@@ -22,7 +22,7 @@ public class ThreeSum {
         return result;
     }
 
-    static List<List<Integer>> optimal(int []nums){
+    static List<List<Integer>> better(int []nums){
         List<List<Integer>> result = new ArrayList<>();
 
         Arrays.sort(nums);
@@ -47,7 +47,7 @@ public class ThreeSum {
     public static void main(String[] args) {
         int[] nums = {-1, 0, 1, 2, -1, -4};
         List<List<Integer>> ans1 = threeSumBrute(nums);
-        List<List<Integer>>ans2 = optimal(nums);
+        List<List<Integer>>ans2 = better(nums);
         System.out.println(ans2);
         System.out.println(ans1);
     }

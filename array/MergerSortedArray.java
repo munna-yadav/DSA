@@ -23,7 +23,7 @@ public class MergerSortedArray {
                 nums1[k--] = nums1[i--];
             }
             else{
-                nums2[k--] = nums2[j--];
+                nums1[k--] = nums2[j--];
             }
         }
 
@@ -36,7 +36,7 @@ public class MergerSortedArray {
         int []nums2 = {2,5,6};
         int n = 3; 
         int m = 3;
-        solution(nums1, n, nums2, m);
+        optimal(nums1, n, nums2, m);
         System.out.println(Arrays.toString(nums1));
 
     }

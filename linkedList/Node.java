@@ -20,17 +20,20 @@ class Node {
         }
         return head;
     }
+
+    static void traverseLL(Node head){
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
     public static void main(String[] args)
     {
         int[] arr = { 1, 3, 4, 4, 5 };
 
         Node head = CreateList(arr);
 
-        Node temp = head;
-        int count = 0;
-        while (temp != null) {
-            System.out.print(temp.data + ",");
-            temp = temp.next;
-        }
+      traverseLL(head);
     }
 }

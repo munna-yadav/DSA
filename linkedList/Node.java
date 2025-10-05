@@ -28,12 +28,26 @@ class Node {
             temp = temp.next;
         }
     }
+
+    static int countLL(Node head){
+        Node temp = head;
+        int count = 0;
+
+        while(temp != null){
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
     public static void main(String[] args)
     {
         int[] arr = { 1, 3, 4, 4, 5 };
 
         Node head = CreateList(arr);
 
-      traverseLL(head);
+        traverseLL(head);
+
+        int count = countLL(head);
+        System.out.println("\nNo of nodes: "+ count);
     }
 }
